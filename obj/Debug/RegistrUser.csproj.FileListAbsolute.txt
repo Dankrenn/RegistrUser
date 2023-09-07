@@ -20,5 +20,3 @@ C:\Users\danii\source\repos\RegistrUser\RegistrUser\obj\Debug\RegistrUser.csproj
 C:\Users\danii\source\repos\RegistrUser\RegistrUser\obj\Debug\RegistrUser.exe
 C:\Users\danii\source\repos\RegistrUser\RegistrUser\obj\Debug\RegistrUser.pdb
 C:\Users\danii\source\repos\RegistrUser\RegistrUser\bin\Debug\RegistrUserDAL.dll.config
-C:\Users\danii\source\repos\RegistrUser\RegistrUser\bin\Debug\EntityFramework.dll
-C:\Users\danii\source\repos\RegistrUser\RegistrUser\bin\Debug\EntityFramework.xml
