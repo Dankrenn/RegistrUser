@@ -26,5 +26,10 @@ namespace RegistrUser
             InitializeComponent();
             DataContext = new ApplicationViewModel();
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -56,7 +56,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="View\UserViewListBox.xaml.cs">
+      <DependentUpon>UserViewListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelectedUserView.xaml.cs">
+      <DependentUpon>SelectedUserView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\GeneralMarkup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -64,10 +74,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\GeneralMarkup.xaml.cs">
+      <DependentUpon>GeneralMarkup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\UserViewListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SelectedUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -96,6 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BisnesLogic\BisnesLogic.csproj">
+      <Project>{6905FAEC-7724-4DD6-A8C2-80AA37D6D233}</Project>
+      <Name>BisnesLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RegistrUserDAL\RegistrUserDAL.csproj">
       <Project>{3CE7998B-446A-4E77-80FC-3133772C4EA4}</Project>
       <Name>RegistrUserDAL</Name>
