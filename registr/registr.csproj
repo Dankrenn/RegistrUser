@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{225ED597-B617-47A0-8265-8A35C0A9AAB5}</ProjectGuid>
+    <ProjectGuid>{4A6665CC-ADA1-425C-A39A-3EFEBA33AB94}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>RegistrUser</RootNamespace>
-    <AssemblyName>RegistrUser</AssemblyName>
+    <RootNamespace>registr</RootNamespace>
+    <AssemblyName>registr</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,16 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\UserViewListBox.xaml.cs">
-      <DependentUpon>UserViewListBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SelectedUserView.xaml.cs">
-      <DependentUpon>SelectedUserView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="View\GeneralMarkup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,21 +63,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\GeneralMarkup.xaml.cs">
-      <DependentUpon>GeneralMarkup.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\UserViewListBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SelectedUserView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -117,12 +95,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BisnesLogic\BisnesLogic.csproj">
-      <Project>{6905FAEC-7724-4DD6-A8C2-80AA37D6D233}</Project>
-      <Name>BisnesLogic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RegistrUserDAL\RegistrUserDAL.csproj">
-      <Project>{3CE7998B-446A-4E77-80FC-3133772C4EA4}</Project>
+      <Project>{95106554-A407-4E6D-9F57-FF99FC47DB71}</Project>
       <Name>RegistrUserDAL</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BisnesLogic
+namespace RegistrUserDAL
 {
     public class NotifyPropertyChanged : INotifyPropertyChanged
     {

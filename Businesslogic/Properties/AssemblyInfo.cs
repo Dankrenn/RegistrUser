@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
-[assembly: AssemblyTitle("BisnesLogic")]
+[assembly: AssemblyTitle("Businesslogic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BisnesLogic")]
+[assembly: AssemblyProduct("Businesslogic")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("6905faec-7724-4dd6-a8c2-80aa37d6d233")]
+[assembly: Guid("983408b4-3c52-4f1e-8c7f-a8c893d47382")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

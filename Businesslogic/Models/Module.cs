@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BisnesLogic
+namespace Businesslogic.Models
 {
     public class Module
     {
