@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace RegistrUserDAL.ViewModels
 {
+
     public class UserViewModel : NotifyPropertyChanged
     {
         public User SelectedUser;
