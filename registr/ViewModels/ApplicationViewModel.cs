@@ -9,7 +9,7 @@ using Microsoft.Win32;
 using Businesslogic.Models;
 using Businesslogic;
 
-namespace RegistrUserDAL.ViewModels
+namespace registr.ViewModels
 {
     public class ApplicationViewModel : NotifyPropertyChanged
     {

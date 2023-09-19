@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RegistrUserDAL.Migretion
+namespace RegistrUserDAL
 {
     public class ApplicationContext : DbContext
     {

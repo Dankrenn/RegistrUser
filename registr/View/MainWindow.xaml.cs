@@ -1,4 +1,4 @@
-﻿using RegistrUserDAL.ViewModels;
+﻿using registr.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 

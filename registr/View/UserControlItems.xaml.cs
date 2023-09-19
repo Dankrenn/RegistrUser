@@ -1,7 +1,4 @@
-﻿using Businesslogic;
-using Businesslogic.Models;
-using registr.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +16,11 @@ using System.Windows.Shapes;
 namespace registr.View
 {
     /// <summary>
-    /// Логика взаимодействия для UserControlListbox.xaml
+    /// Логика взаимодействия для UserControlItems.xaml
     /// </summary>
-    public partial class UserControlListbox : UserControl
+    public partial class UserControlItems : UserControl
     {
-       
-public UserControlListbox()
+        public UserControlItems()
         {
             InitializeComponent();
         }

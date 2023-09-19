@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Businesslogic.Models.Permission;
 
-namespace RegistrUserDAL.ViewModels
+namespace registr.ViewModels
 {
     public class PermissionViewModel : NotifyPropertyChanged
     {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RegistrUserDAL.ViewModels
+namespace registr.ViewModels
 {
 
     public class UserViewModel : NotifyPropertyChanged

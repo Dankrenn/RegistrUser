@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RegistrUserDAL
+namespace registr.ViewModels
 {
     public class NotifyPropertyChanged : INotifyPropertyChanged
     {

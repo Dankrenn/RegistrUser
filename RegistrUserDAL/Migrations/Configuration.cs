@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<RegistrUserDAL.Migretion.ApplicationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(RegistrUserDAL.Migretion.ApplicationContext context)
+        protected override void Seed(ApplicationContext context)
         {
             //  This method will be called after migrating to the latest version.
 
