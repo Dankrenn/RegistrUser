@@ -1,6 +1,7 @@
 ﻿using Businesslogic.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,6 @@ namespace Businesslogic
         public byte[] Photo { get; set; }
         public Gender Gender { get; set; }
         public bool Blocked { get; set; }
-        public List<Permission> Permission { get; set; }
-
-
+        public List<Permission> Permission { get; set; }          
     }
 }

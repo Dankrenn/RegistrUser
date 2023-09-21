@@ -98,14 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationContectext.cs" />
-    <Compile Include="Migrations\202309172007430_nn.cs" />
-    <Compile Include="Migrations\202309172007430_nn.designer.cs">
-      <DependentUpon>202309172007430_nn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\HomeController.cs" />
-    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\PostgreSQLUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,11 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202309172007430_nn.resx">
-      <DependentUpon>202309172007430_nn.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RegistrUserDAL.Repository
+namespace Businesslogic.Repository
 {
-    interface IRepository<T> : IDisposable where T : class
+    public interface IRepository<T> : IDisposable where T : class
     {
         IEnumerable<T> GetUserList(); // получение всех объектов
         T GetUser(int id); // получение одного объекта по id

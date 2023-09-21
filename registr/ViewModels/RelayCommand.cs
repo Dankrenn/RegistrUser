@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace registr.ViewModels
+namespace RegistrUserWPF.ViewModels
 {
     public class RelayCommand : ICommand
     {

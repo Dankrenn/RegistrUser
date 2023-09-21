@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace registr.ViewModels
+namespace RegistrUserWPF.ViewModels
 {
     public class NotifyPropertyChanged : INotifyPropertyChanged
     {

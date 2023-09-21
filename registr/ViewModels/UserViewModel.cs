@@ -1,31 +1,47 @@
 ﻿using Businesslogic;
+using Businesslogic.Models;
+using RegistrUserWPF.Enums;
+using RegistrUserWPF.Enums.EnumDescriprionViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Businesslogic.Models.Permission;
 
-namespace registr.ViewModels
+namespace RegistrUserWPF.ViewModels
 {
 
     public class UserViewModel : NotifyPropertyChanged
     {
         public User SelectedUser;
         public ObservableCollection<PermissionViewModel> PermissionViewModels;
+        private ObservableCollection<EnumViewModel<Modes>> modesEnum;
 
-        public UserViewModel(User user)
+        public UserViewModel(User user, IEnumValuesProvider enumProvider)
         {
             SelectedUser = user;
             PermissionViewModels = new ObservableCollection<PermissionViewModel>(user.Permission.Select(x => new PermissionViewModel(x)));
+            modesEnum = enumProvider.GetValues<Modes>().ToObservableCollection();
+
         }
-        public ObservableCollection<PermissionViewModel> PermissionViewModel
+        public ObservableCollection<EnumViewModel<Modes>> ModesEnum
         {
-            get => PermissionViewModels;
+            get { return modesEnum; }
+            set
+            {
+                modesEnum = value;
+                OnPropertyChanged("ModesEnum");
+            }
+        }
+        public ObservableCollection<PermissionViewModel> PermissionsViewModel
+        {
+            get { return PermissionViewModels; }
             set
             {
                 PermissionViewModels = value;
-                OnPropertyChanged("Permission");
+                OnPropertyChanged("PermissionsViewModel");
             }
         }
 

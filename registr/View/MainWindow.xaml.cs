@@ -1,9 +1,9 @@
-﻿using registr.ViewModels;
+﻿using RegistrUserWPF.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
 
-namespace registr
+namespace RegistrUserWPF
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

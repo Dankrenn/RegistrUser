@@ -1,41 +1,40 @@
 ﻿using Businesslogic.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Businesslogic.Models.Permission;
+using RegistrUserWPF.Enums.Description;
+using RegistrUserWPF.Enums.EnumDescriprionViewModel;
 
-namespace registr.ViewModels
+
+namespace RegistrUserWPF.ViewModels
 {
     public class PermissionViewModel : NotifyPropertyChanged
     {
-        public Permission SelectedPermission;
-        public ObservableCollection<ModuleViewModel> ModuleViewModels;
+        Permission SelectedPermission;
+        Module module;
+        EnumDescriptionProvider enumDescription;
+        EnumViewModel<Modes> selectedMode;
         public PermissionViewModel(Permission selectedPermission)
         {
             SelectedPermission = selectedPermission;
-            // ModuleViewModels = new ObservableCollection<ModuleViewModel>(selectedPermission.Module.Select(x => new ModuleViewModel(x)));
+            module = SelectedPermission.Module;
+            enumDescription = new EnumDescriptionProvider();
+            selectedMode = new EnumViewModel<Modes>(SelectedPermission.EditMode, enumDescription.GetDescription(SelectedPermission.EditMode));
         }
 
-        public Modes EditMode
+       public EnumViewModel<Modes> SelectedMode
         {
-            get => SelectedPermission.EditMode;
+            get { return selectedMode; }
             set
             {
-                SelectedPermission.EditMode = value;
-                OnPropertyChanged("EditMode");
+                selectedMode = value;
+                OnPropertyChanged("SelectedMode");
             }
         }
-
-        public ObservableCollection<ModuleViewModel> Module
+        public string ModuleName
         {
-            get => ModuleViewModels;
+            get { return module.Name; }
             set
             {
-                ModuleViewModels = value;
-                OnPropertyChanged("Module");
+                module.Name = value;
+                OnPropertyChanged("ModuleName");
             }
         }
     }
