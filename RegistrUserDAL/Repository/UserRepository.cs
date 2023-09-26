@@ -9,15 +9,23 @@ using Businesslogic.Repository;
 
 namespace RegistrUserDAL.Repository
 {
-    public class PostgreSQLUserRepository : IRepository<User>
+    public class UserRepository : IRepository<User>
     {
         private ApplicationContext db;
 
-        public PostgreSQLUserRepository()
+        public UserRepository()
         {
             db = new ApplicationContext();
         }
 
+        public void Dispose()
+        {
+            if (db != null)
+            {
+                db.Dispose();
+                db = null;
+            }
+        }
         public void Create(User user)
         {
             db.Users.Add(user);
@@ -30,44 +38,20 @@ namespace RegistrUserDAL.Repository
                 db.Users.Remove(user);
         }
 
-        private bool disposed = false;
-
-        public virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    db.Dispose();
-                }
-            }
-            this.disposed = true;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        public User GetUser(int id)
+        public User GetID(int id)
         {
             return db.Users.Find(id);
         }
 
-        public IEnumerable<User> GetUserList()
+        public IEnumerable<User> GetList()
         {
-            return db.Users;
+            return db.Users.Include(x => x.Permission);
         }
 
-        public void Save()
-        {
-            db.SaveChanges();
-        }
-
-        public void Update(User user)
+        public void Save(User user)
         {
             db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }

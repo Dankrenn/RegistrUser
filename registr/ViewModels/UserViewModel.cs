@@ -1,5 +1,7 @@
 ﻿using Businesslogic;
 using Businesslogic.Models;
+using Businesslogic.Repository;
+using RegistrUserDAL.Repository;
 using RegistrUserWPF.Enums;
 using RegistrUserWPF.Enums.EnumDescriprionViewModel;
 using System;
@@ -15,107 +17,109 @@ namespace RegistrUserWPF.ViewModels
 
     public class UserViewModel : NotifyPropertyChanged
     {
-        public User SelectedUser;
-        public ObservableCollection<PermissionViewModel> PermissionViewModels;
-        private ObservableCollection<EnumViewModel<Modes>> modesEnum;
+        private User _selectedUser;
+        private ObservableCollection<PermissionViewModel> _permissionViewModels;
+        private ObservableCollection<EnumViewModel<Modes>> _modesEnum;
+        private ModuleRepository _moduleRepository = new ModuleRepository();
 
         public UserViewModel(User user, IEnumValuesProvider enumProvider)
         {
-            SelectedUser = user;
-            PermissionViewModels = new ObservableCollection<PermissionViewModel>(user.Permission.Select(x => new PermissionViewModel(x)));
-            modesEnum = enumProvider.GetValues<Modes>().ToObservableCollection();
+            _selectedUser = user;
+           // List<Module> Modules = _moduleRepository.GetList().ToList();
+            _permissionViewModels = new ObservableCollection<PermissionViewModel>(user.Permission.Select(x => new PermissionViewModel(x)));
+            _modesEnum = enumProvider.GetValues<Modes>().ToObservableCollection();
 
         }
         public ObservableCollection<EnumViewModel<Modes>> ModesEnum
         {
-            get { return modesEnum; }
+            get { return _modesEnum; }
             set
             {
-                modesEnum = value;
+                _modesEnum = value;
                 OnPropertyChanged("ModesEnum");
             }
         }
         public ObservableCollection<PermissionViewModel> PermissionsViewModel
         {
-            get { return PermissionViewModels; }
+            get { return _permissionViewModels; }
             set
             {
-                PermissionViewModels = value;
+                _permissionViewModels = value;
                 OnPropertyChanged("PermissionsViewModel");
             }
         }
 
         public string LastName
         {
-            get => SelectedUser.LastName;
+            get => _selectedUser.LastName;
             set
             {
-                SelectedUser.LastName = value;
+                _selectedUser.LastName = value;
                 OnPropertyChanged("LastName");
             }
         }
         public string MidleName
         {
-            get => SelectedUser.MidleName;
+            get => _selectedUser.MidleName;
             set
             {
-                SelectedUser.MidleName = value;
+                _selectedUser.MidleName = value;
                 OnPropertyChanged("MidleName");
             }
         }
         public string FirsName
         {
-            get => SelectedUser.FirsName;
+            get => _selectedUser.FirsName;
             set
             {
-                SelectedUser.FirsName = value;
+                _selectedUser.FirsName = value;
                 OnPropertyChanged("FirsName");
             }
         }
         public DateTime Birtchday
         {
-            get => SelectedUser.Birtchday;
+            get => _selectedUser.Birtchday;
             set
             {
-                SelectedUser.Birtchday = value;
+                _selectedUser.Birtchday = value;
                 OnPropertyChanged("Birtchday");
             }
         }
         public DateTime CreatedDate
         {
-            get => SelectedUser.CreatedDate;
+            get => _selectedUser.CreatedDate;
             set
             {
-                SelectedUser.CreatedDate = value;
+                _selectedUser.CreatedDate = value;
                 OnPropertyChanged("CreatedDate");
             }
         }
         public DateTime ModifiedDate
         {
-            get => SelectedUser.ModifiedDate;
+            get => _selectedUser.ModifiedDate;
             set
             {
-                SelectedUser.ModifiedDate = value;
+                _selectedUser.ModifiedDate = value;
                 OnPropertyChanged("ModifiedDate");
             }
         }
         public byte[] Photo
         {
-            get => SelectedUser.Photo;
+            get => _selectedUser.Photo;
             set
             {
-                SelectedUser.Photo = value;
+                _selectedUser.Photo = value;
                 OnPropertyChanged("Photo");
             }
         }
         public Gender Gender
         {
-            get => SelectedUser.Gender;
+            get => _selectedUser.Gender;
             set
             {
-                if (SelectedUser.Gender == value)
+                if (_selectedUser.Gender == value)
                     return;
-                SelectedUser.Gender = value;
+                _selectedUser.Gender = value;
 
                 OnPropertyChanged("Gender");
                 OnPropertyChanged("TranslateGender");
@@ -127,33 +131,33 @@ namespace RegistrUserWPF.ViewModels
 
         public bool ChangeSexMen
         {
-            get => Gender.Men == SelectedUser.Gender ? true : false;
+            get => Gender.Men == _selectedUser.Gender ? true : false;
             set => Gender = value ? Gender.Men : Gender;
         }
         public bool ChangeSexWomen
         {
-            get => Gender.Women == SelectedUser.Gender ? true : false;
+            get => Gender.Women == _selectedUser.Gender ? true : false;
             set => Gender = value ? Gender.Women : Gender;
         }
 
         public string TranslateGender
         {
-            get => SelectedUser.Gender == Gender.Men ? "Мужчина" : "Женщина";
+            get => _selectedUser.Gender == Gender.Men ? "Мужчина" : "Женщина";
         }
 
         public bool Blocked
         {
-            get => SelectedUser.Blocked;
+            get => _selectedUser.Blocked;
             set
             {
-                SelectedUser.Blocked = value;
+                _selectedUser.Blocked = value;
                 OnPropertyChanged("Blocked");
                 OnPropertyChanged("TransletedBlocked");
             }
         }
         public string TransletedBlocked
         {
-            get => SelectedUser.Blocked ? "Заблокирован" : "Доступен";
+            get => _selectedUser.Blocked ? "Заблокирован" : "Доступен";
         }
     }
 }
