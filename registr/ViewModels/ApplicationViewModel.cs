@@ -150,27 +150,5 @@ namespace RegistrUserWPF.ViewModels
             }
         }
 
-        private RelayCommand _openCommand;
-        public RelayCommand OpenCommand
-        {
-            get
-            {
-                return _openCommand ??
-                  (_openCommand = new RelayCommand(o =>
-                  {
-                      OpenFileDialog openFileDialog = new OpenFileDialog();
-                      openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
-                      if (openFileDialog.ShowDialog() == true)
-                      {
-                          using (var stream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
-                          {
-                              byte[] buffer = new byte[stream.Length];
-                              stream.Read(buffer, 0, (int)stream.Length);
-                              _selectedUserViewModels.Photo = buffer;
-                          }
-                      }
-                  }));
-            }
-        }
-    }
+      }
 }

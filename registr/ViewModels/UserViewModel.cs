@@ -1,12 +1,14 @@
 ﻿using Businesslogic;
 using Businesslogic.Models;
 using Businesslogic.Repository;
+using Microsoft.Win32;
 using RegistrUserDAL.Repository;
 using RegistrUserWPF.Enums;
 using RegistrUserWPF.Enums.EnumDescriprionViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -158,6 +160,33 @@ namespace RegistrUserWPF.ViewModels
         public string TransletedBlocked
         {
             get => _selectedUser.Blocked ? "Заблокирован" : "Доступен";
+        }
+
+        private RelayCommand _openCommand;
+        public RelayCommand OpenCommand
+        {
+            get
+            {
+                return _openCommand ??
+                 (_openCommand = new RelayCommand(obj =>
+                 {
+                     if (_selectedUser != null)
+                     {
+                         OpenFileDialog openFileDialog = new OpenFileDialog();
+                         openFileDialog.Filter = "Файлы изображений (*.bmp, *.jpg, *.png)|*.bmp;*.jpg;*.png";
+                         openFileDialog.ShowDialog();
+                         var path = openFileDialog.FileName;
+                         if (path != "")
+                         {
+                             Photo = File.ReadAllBytes(path);
+                         }
+                         else
+                         {
+                             openFileDialog.Reset();
+                         }
+                     }
+                 }));
+            }
         }
     }
 }
