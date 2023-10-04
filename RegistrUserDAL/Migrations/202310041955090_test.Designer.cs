@@ -13,7 +13,7 @@ namespace RegistrUserDAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202310030735036_test"; }
+            get { return "202310041955090_test"; }
         }
         
         string IMigrationMetadata.Source

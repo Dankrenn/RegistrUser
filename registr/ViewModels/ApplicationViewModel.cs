@@ -52,7 +52,7 @@ namespace RegistrUserWPF.ViewModels
 
         public ApplicationViewModel()
         {
-            _userPhoto = File.ReadAllBytes(@"C:\Users\danii\OneDrive\Рабочий стол\вв.jpg");
+            _userPhoto = File.ReadAllBytes(@"C:\Users\79009\Desktop\вв.jpg");
            // _repositoryModules = new ModuleRepository();
            // _modulesList = _repositoryModules.GetList().ToList();
            // _repositoryUsers = new UserRepository();
